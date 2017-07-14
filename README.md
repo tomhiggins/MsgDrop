@@ -29,16 +29,16 @@ __Github version works with release 2.0.0 or newer of the [ESP8266 core for Ardu
 
 
 ### msgdrop.ino
--Edit the configuration at the top of the .ino file 
--Edit the .ino file to mod the page layout and text that will be served up. 
--Upload it to your ESP8266. 
--Reboot. 
+- Edit the configuration at the top of the .ino file 
+- Edit the .ino file to mod the page layout and text that will be served up. 
+- Upload it to your ESP8266. 
+- Reboot. 
 
 
 ## Current status
--Copied the codebased from Popup-chat
--Stripped blinky led and Serial comms to save cycles and power
--Moded some of the page text
+- Copied the codebased from Popup-chat
+- Stripped blinky led and Serial comms to save cycles and power
+- Moded some of the page text
 
 ## To Do
 - Ability to add urls to connected services
