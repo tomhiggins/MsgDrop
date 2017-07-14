@@ -4,7 +4,7 @@
 // based on: Captive Portal by: M. Ray Burnette 20150831
 // moded tomhiggins
 #include <ESP8266WiFi.h>
-#include <DNSServer.h>
+#include <DNSServer.h> 
 #include <ESP8266WebServer.h>
 
 // config
@@ -19,21 +19,18 @@ const String FAQ = "this is an anonymous msg board that only works within the wi
 "You can not contact the internet from here but you can use this message board.<br/>"
 "It is anonymous, only the last few messages are kept, and nothing is saved permanently.<br/>";
 
-// boring
+// Init
 #define VER "sumcheck 001"
 const byte HTTP_CODE = 200; // nyi? 511; // rfc6585
 const byte DNS_PORT = 53;  // Capture DNS requests on port 53
 const byte TICK_TIMER = 1000;
-const byte ACTIVITY_DURATION = 60 * TICK_TIMER; // how many seconds should the LED stay on after last visit?
-const byte ACTIVITY_LED = 2;
-const byte ACTIVITY_REVERSE = 1; // turn off when active, not on.. needed for me
 IPAddress APIP(10, 10, 10, 1);    // Private network for server
+
 // state:
 String allMsgs="<i>*system reset and active*</i>";
 unsigned long bootTime=0, lastActivity=0, lastTick=0, tickCtr=0; // timers
 DNSServer dnsServer; ESP8266WebServer webServer(80); // standard api servers
-void em(String s){ Serial.print(s); } 
-void emit(String s){ Serial.println(s); } // debugging
+
 String input(String argName) {
   String a=webServer.arg(argName);
   a.replace("<","&lt;");a.replace(">","&gt;");
@@ -83,7 +80,6 @@ String posted() {
 void setup() {
   
   bootTime = lastActivity = millis();
-  pinMode(ACTIVITY_LED, OUTPUT); led(1);
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(APIP, APIP, IPAddress(255, 255, 255, 0));
   WiFi.softAP(CHATNAME);
@@ -93,10 +89,7 @@ void setup() {
   webServer.onNotFound([]() { lastActivity=millis(); webServer.send(HTTP_CODE, "text/html", index()); });
   webServer.begin();
 }
-void led(byte p){
-  byte on=p^ACTIVITY_REVERSE;
-  digitalWrite(ACTIVITY_LED, on ? HIGH : LOW);
-}
+
 
 void loop() { 
   if ((millis()-lastTick)>TICK_TIMER) {lastTick=millis();} 
