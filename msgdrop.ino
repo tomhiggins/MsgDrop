@@ -35,6 +35,7 @@ String input(String argName) {
   String a=webServer.arg(argName);
   a.replace("<","&lt;");a.replace(">","&gt;");
   a.substring(0,200); return a; }
+
 String quote() { 
   const byte nquotes=3;
   String quotes[nquotes]={
@@ -44,9 +45,11 @@ String quote() {
   };
   return quotes[millis() / 1000 / 60 / 60 % nquotes];
 }
+
 String footer() { return 
   "</div><div class=q><label>Quote of the hour:</label>"+quote()+"</div>"
   "<div class=by>" VER "</div></body></html>"; }
+
 String header(String t) {
   String a = String(CHATNAME);
   String CSS = "article { background: #f2f2f2; padding: 1em; }" 
@@ -64,19 +67,23 @@ String header(String t) {
     "<style>"+CSS+"</style></head>"
     "<body><nav><b>"+a+"</b> "+BLURB+"</nav><div><h1>"+t+"</h1></div><div>";
   return h; }
+
 String faq() {
   return header("frequently asked questions") + FAQ + footer();
 }
+
 String index() {
-  return header(INDEXTITLE) + "<div>" + INDEXBANNER + "</div><div><label>Last few messages:</label><ol>"+allMsgs+
+  return header(INDEXTITLE) + "<div>" + INDEXBANNER + "</div><div><label>Messages:</label><ol>"+allMsgs+
     "</ol></div><div><form action=/post method=post><label>Post new message:</label><br/>"+
     "<i>remember:</i> to stay anonymous do not use names/ids</i><br/>"+
     "<textarea name=m></textarea><br/><input type=submit value=send></form>" + footer();
 }
+
 String posted() {
   String msg=input("m"); allMsgs="<li>"+msg+"</li>"+allMsgs;
   return header(POSTEDTITLE) + POSTEDBANNER + "<article>"+msg+"</article><a href=/>Back to Msg Board</a>" + footer();
 }
+
 void setup() {
   
   bootTime = lastActivity = millis();
