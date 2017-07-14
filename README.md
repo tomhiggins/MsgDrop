@@ -7,8 +7,32 @@ any web browser and any traffic will be sent to the Web Server.
 
 
 ## Installation
-Edit the configuration at the top of the .ino file and upload it to your 8266. Reboot. 
-You can edit the .ino file to mod the page layout and text that will be served up. 
+
+
+### DNSServe.h
+I am using the DNSServer.h found in https://github.com/tzapu/WiFiManager
+You can either install through the Arduino Library Manager or checkout the latest changes or a release from github
+
+#### Install through Library Manager
+__Currently version 0.8+ works with release 2.0.0 or newer of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)__
+ - in Arduino IDE got to Sketch/Include Library/Manage Libraries
+  ![Manage Libraries](http://i.imgur.com/9BkEBkR.png)
+
+ - search for WiFiManager
+  ![WiFiManager package](http://i.imgur.com/18yIai8.png)
+
+ - click Install and start [using it](#using)
+
+####  Checkout from github
+__Github version works with release 2.0.0 or newer of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)__
+- Checkout library to your Arduino libraries folder
+
+
+### msgdrop.ino
+-Edit the configuration at the top of the .ino file 
+-Edit the .ino file to mod the page layout and text that will be served up. 
+-Upload it to your ESP8266. 
+-Reboot. 
 
 
 ## Current status
