@@ -47,9 +47,9 @@ __Github version works with release 2.0.0 or newer of the [ESP8266 core for Ardu
 ## License
 
 MIT license. 
-Based on Captive Portal by M. Ray Burnette 20150831. 
-Based on PopupChat by @tlack (https://github.com/tlack/popup-chat) 
-Moded by [tomwsmf] (https://github.com/tomhiggins/)
+ - Based on Captive Portal by M. Ray Burnette 20150831. 
+ - Based on PopupChat by @tlack (https://github.com/tlack/popup-chat) 
+ - Moded by [tomwsmf] (https://github.com/tomhiggins/)
 
 ## Contact
 Moded by @tomwsmf on Twitter
