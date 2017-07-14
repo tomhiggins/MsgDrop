@@ -10,7 +10,7 @@ any web browser and any traffic will be sent to the Web Server.
 
 
 ### DNSServe.h
-I am using the DNSServer.h found in https://github.com/tzapu/WiFiManager
+I am using the DNSServer.h found in [tzapu's WifiManager](https://github.com/tzapu/WiFiManager)
 You can either install through the Arduino Library Manager or checkout the latest changes or a release from github
 
 #### Install through Library Manager
@@ -21,11 +21,11 @@ __Currently version 0.8+ works with release 2.0.0 or newer of the [ESP8266 core 
  - search for WiFiManager
   ![WiFiManager package](http://i.imgur.com/18yIai8.png)
 
- - click Install and start [using it](#using)
+ - click Install 
 
 ####  Checkout from github
 __Github version works with release 2.0.0 or newer of the [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)__
-- Checkout library to your Arduino libraries folder
+- Checkout library to your Arduino libraries folder [tzapu's WifiManager](https://github.com/tzapu/WiFiManager)
 
 
 ### msgdrop.ino
