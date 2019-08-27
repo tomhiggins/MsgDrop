@@ -12,7 +12,15 @@ The story is the same, a way to pass messages out of channel. This version I am 
 the ability to run as a stand alone Access Point off  of the Internet as well as the ability to attach to an 
 existing network and be used from it
 
+Hardware I am using...
 https://m5stack.com/collections/m5-core/products/stick-c
+
+Language....MicroPython
+
+
+
+
+## MsgDrop ESP8266
 _________________________________________________________________________________________________________
 MsgDrop uses an ESP8266 device running a combination Captive Portal and Web Server to allow
 users to connect easily via any wifi enabled device. Once connected the user can utilize
