@@ -9,7 +9,7 @@ was the first thing I thought of to test the new board out with. So here we are,
 things will progress. I will keep the ESP8266 version here and maybe upgrade it aas well. 
 
 The story is the same, a way to pass messages out of channel. This version I am going to try and add some crypto and 
-the ability to run as a stnd along Access Point off  of the Internet as well as have the ability to attach to an 
+the ability to run as a stand alone Access Point off  of the Internet as well as the ability to attach to an 
 existing network and be used from it
 
 https://m5stack.com/collections/m5-core/products/stick-c
