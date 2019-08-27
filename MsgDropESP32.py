@@ -18,7 +18,17 @@ IndexTitle = "Hello friend!"
 IndexBanner = "This is a local-only, non-cloud msg board that you use through any web browser. Messages are not stored and will not survive at reboot.<a href=/faq>See frequently asked questions..</a>"
 PostedTitle = "Message posted!"
 PostedBanner = "Your message will stay live for a short time or until the server is rebooted."
-Faq = "This is an anonymous msg board that only works within the wifi range of a diskless device.<br/>You can not contact the internet from here but you can use this message board and the functions herein.<br/>It is anonymous, only the last few messages are kept, and nothing is saved permanently.<br/>"
+
+
+Faq = """<body><nav>"""+str(ChatName)+"""  """+str(Blurb)+"""</nav>
+<div>"""+str(IndexBanner)+""" </div><div>
+This is an anonymous msg board that only works within the wifi range of a diskless device.<br/>
+You can not contact the internet from here but you can use this message board and the functions herein.<br/>
+It is anonymous, only the last few messages are kept, and nothing is saved permanently.<br/>
+</div></body>
+"""
+
+
 Footer = "</div><div class=q><label>Quote of the hour:</label>  Fnord!</div><div class=by> VER 0.01a </div></body></html>"
 
 Header = """<!DOCTYPE html><html> <head><title> {ChatName} :: </title>
@@ -50,6 +60,14 @@ def web_page():
   html = str(html) + str(Body)
   html = str(html) + str(Footer)
   return html
+
+def faq_page():
+  html = ""
+  html = str(Header)
+  html = str(html) + str(Faq)
+  html = str(html) + str(Footer)
+  return html
+
 
 ip = wifiCfg.wlan_sta.ifconfig()
 
@@ -87,6 +105,12 @@ while True:
   label4.setText('Content = %s' % request)
   label3.setText('Got a connection from %s' % str(addr))
   response = web_page()
+  
+  dofaq = request.find('/faq')
+  if dofaq == 6:
+    response = faq_page()
+
+  
   conn.send('HTTP/1.1 200 OK\n')
   conn.send('Content-Type: text/html\n')
   conn.send('Connection: close\n\n')
