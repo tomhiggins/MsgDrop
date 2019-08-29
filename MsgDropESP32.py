@@ -79,7 +79,7 @@ label4 = M5TextBox(0, 85, "Text", lcd.FONT_Default,0xFFFFFF, rotate=0)
 label5 = M5TextBox(120, 200, "Text", lcd.FONT_Default,0xFFFFFF, rotate=0)
 
 response = None
-wifiCfg.doConnect('NETGEAR75-5G', 'sillygiant')
+wifiCfg.doConnect('YourAPsSSID', 'YourAPsPassword')
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(('192.168.1.30', 80))
 s.listen(5)
