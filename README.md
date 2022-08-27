@@ -39,8 +39,7 @@ __Github version works with release 2.0.0 or newer of the [ESP8266 core for Ardu
 - Reboot. 
 
 ## MsgDrop ESP32
-This has been ported over from the ESP8266 version of MsgDrop
-You have to install the ESP32 core for Arudino instead
+This has been ported over from the ESP8266 version of MsgDrop. You have to install the ESP32 core for Arudino instead.
 
 ## Current status
 - Copied the codebased from Popup-chat
